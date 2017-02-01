@@ -2,7 +2,9 @@
 Annotations on webpack source code in a pseudo-guided fashion
 
 ## Just an experiment
-My goal as one of he maintainers for [webpack](github.com/webpack/webpack) is being able to help developers better understand how webpack works. Demystify to tool so it helps you become more comfortable understanding how to use it. 
+My goal as one of the maintainers for [webpack](github.com/webpack/webpack) is being able to help developers better understand how webpack works. 
+
+Demystify to tool so it helps you become more comfortable understanding how to use it and contributing to our source code and supporting packages.
 
 ## Have a question? 
 The whole goal is to teach you how to use webpack, therefore please ask questions about the annotations you see inside of a github issue, and I will help you clarify any parts of what is seen below. There is **NO wrong question**. 
