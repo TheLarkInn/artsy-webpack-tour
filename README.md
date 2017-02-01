@@ -7,9 +7,12 @@ My goal as one of he maintainers for [webpack](github.com/webpack/webpack) is be
 ## Have a question? 
 The whole goal is to teach you how to use webpack, therefore please ask questions about the annotations you see inside of a github issue, and I will help you clarify any parts of what is seen below. There is **NO wrong question**. 
 
+## Disclaimer: This may not match master!
+I will likely not keep this up to date with every change in master on webpack/webpack. Rather, the purpose is to teach how to read and view the flow of the compilation lifecycle through webpack.
+
 ### Help Wanted ❤😍💕❤😍💕❤😍💕❤😍💕❤😍
 
-### Steps
+### Version (webpack 2.2.1+ from master)
 ![Step 1](https://github.com/TheLarkInn/artsy-webpack-tour/blob/master/webpack-narrative01.png)
 ![Step 2](https://github.com/TheLarkInn/artsy-webpack-tour/blob/master/webpack-narrative02.png)
 ![Step 3](https://github.com/TheLarkInn/artsy-webpack-tour/blob/master/webpack-narrative03.png)
