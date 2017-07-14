@@ -20,7 +20,8 @@ To make this searchable, the text of each image has been transcribed into the "t
 ### Version (webpack 2.2.1+ from master)
 
 
-<a name="Step1"></a>![Step 1](https://github.com/TheLarkInn/artsy-webpack-tour/blob/master/images/webpack-narrative01.png)
+<a name="Step1"></a>!
+[Step 1](https://github.com/TheLarkInn/artsy-webpack-tour/blob/master/images/webpack-narrative01.png)
 <a name="Step2">![Step 2](https://github.com/TheLarkInn/artsy-webpack-tour/blob/master/images/webpack-narrative02.png)</a>
 <a name="Step3">![Step 3](https://github.com/TheLarkInn/artsy-webpack-tour/blob/master/images/webpack-narrative03.png)</a>
 <a name="Step4">![Step 4](https://github.com/TheLarkInn/artsy-webpack-tour/blob/master/images/webpack-narrative04.png)</a>
