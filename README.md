@@ -79,3 +79,32 @@ To make this searchable, the text of each image has been transcribed into the "t
 "these plugins all pertain to general optimizations including tree shaking"
 "performance budgets code"
 "in version 1, you had to do this yourself, now in v2 we handle it"
+
+### [WebpackOptionsApply.js (after plugins)](#Step6)
+"nice for custom plugins that need to execute after all other default plugins"
+"same as abover except after resolvers are created"
+"saftey net incase someone nulls the input fs"
+"(Also resolvers are created here. The factory comes from webpack/enhanced-resolve)"
+
+### [Compiler.js (The Complier's Constructor)](#Step7)
+"The Compiler"
+"yes, you can set your own custom file system"
+"depreceate where the parser used to live"
+"options from your config will end up here"
+"Constructor"
+
+### [Compiler.js (The Complier's Execution Process)](#Step8)
+"top lvl. function for entire webpack compliation process"
+"timings for builds"
+"here are all of the compiler's plugin events"
+"all plugin events start with 'applyPlugins'"
+"that means you can write custom plugins for any of these events"
+"still track time till the end"
+
+### [Compiler.js (The Complier's Execution Process Part 2)](#Step9)
+"next step in process (called inside of .run)"
+"compilation is being created"
+"create info to init compliation"
+"the compilation plugins are firing"
+
+
