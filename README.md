@@ -13,7 +13,7 @@ The whole goal is to teach you how to use webpack, therefore please ask question
 I will likely not keep this up to date with every change in master on webpack/webpack. Rather, the purpose is to teach how to read and view the flow of the compilation lifecycle through webpack.
 
 ## Text Transcripts
-To make this searchable, the text of each image has been transcribed into the "transcripts" section. The title of each transcript anchors to the respective image. 
+To make this searchable, the text of each image has been transcribed into the "transcripts" section. The title of each transcript anchors to the respective image. The transcripts are not made to be read through (as they are useless without context), rather they provide a tool to search out a specific section based on the commentary.
 
 ### Help Wanted ❤😍💕❤😍💕❤😍💕❤😍💕❤😍
 
@@ -107,4 +107,178 @@ To make this searchable, the text of each image has been transcribed into the "t
 "create info to init compliation"
 "the compilation plugins are firing"
 
+### [Compiler.js (Compilation prelude)](#Step10)
+"we drive into the compilation next"
+"used for long term hashing"
+"lets you plugin to multiple child compilations vs. just the parent"
+"we create modules from here"
 
+### [Compilation.js (Welcome to the compilation)](#Step11)
+"plugin system"
+"compiler thaty created it"
+"Templates: bind the dep. graph to actual output code."
+"the literal constructor for each dep."
+"the shape of these templates vary by the type of dependency"
+
+### [SingleEntryPlugin.js (Down the rabbit hole!)](#Step12)
+"The plugins start to take over!!"
+"theres one of those dep. types I was talking about"
+"thats the values from your entry property"
+"back to the compilation to start walking the dependency graph"
+
+### [Compilation.js](#Step13)
+"open empty slot for chunk about to be created"
+"this is themodule that will be resolved"
+"it wasn't originated from another module, so set null"
+"next fn to visit :)"
+
+### [Compilation.js (Building chains)](#Step14)
+"track time to build chain"
+"if 'bail:true', explode"
+"else build anyways, show error after"
+"safety net so deps are created properly"
+"tip: depfactory.create = module"
+"the dir path it came from"
+"why an array? think nodes on a graph and dependencies are all adjacent nodes"
+"a module is created: passed to callback!!"
+"more timing"
+"module officially added to compilation"
+"Can also be null?"
+"finish early if so"
+"if a module is returned, use it and flag ready"
+"I smell some recursion coming up!!!!"
+
+### [NormalModuleFactory.js](#Step15)
+"see if there is a cache entry first"
+"allows plugins to hijack and modify original 'request' obj."
+"IE: NormalReplacementPlugin"
+"cache"
+"return resolved module"
+
+### [NormalModuleFactory.js](#Step16)
+"this gets triggered from .creal"
+"resolver event triggered & assigned"
+"resolver is now going to ensure that the module you requested actually exists"
+"don't error, skip"
+"the result returned has everything needed to create module"
+"will visit here next"
+"more on this stuff later"
+"the NormalModule instance is finally created"
+"event for plugins to use"
+"send module back to be added to chunk"
+
+### [NormalModuleFactory.js](#Step17)
+"as you can see callback handles resolved requests"
+"find & extract loaders being used in require()"
+"new code for handling ident in loader opts. "
+"Rules are normalized from configuration"
+"find all pre & post loaders"
+"paths to loaders are now resolved"
+"always ordered post-normal-pre"
+
+### [NormalModule.js](#Step18)
+"We are arriving here from the NormalModuleFactory"
+"Parser instance"
+"path the user specifies"
+"path before query etc, are parsed"
+"loaders to be applied"
+"dependencies for context modules (superclass owns this.dependencies)"
+"Normal Module constructor"
+"extends module"
+
+### [Compilation.js (Back to compilation!)](#Step19)
+"just finished time for the callback"
+"this new Normal Module"
+"fails if factory fails "
+"timing/profiling"
+"check cache and profile"
+"next stop"
+"next stop+1"
+"find deps of module to go through resolve, vreate, build process cycle till graph is complete"
+
+### [Compilation.js](#Step20)
+"Up until now, we know the following about our entry module: 
+-request path
+-loaders assigned and applied
+-source value in new"
+"we venture back to the callback"
+"collect mod, and dep diagnostics, report the to compilation as errors"
+"last chance for plugins to modify the NormalModule obj"
+"Same as above for warning separately"
+"Let plugins handle post build events"
+"stable(?) topological ped sort. see compareLocations.j"
+
+### [NormalModule.js](#Step21)
+"timings"
+"1. yet another callback 💕"
+"Really important to remember that once inside this block, loaders have finally been applied"
+"2. see if noParse is set if so, don't send to parser"
+"3. pass raw src to parser along w/ options"
+"4. if loaders are used correctly, the final loader will return js that acorn can parse, else FAIL! "
+
+### [NormalModule.js](#Step22)
+"still here"
+"a value ref. later for Loaders."
+"1. What is loaderContext? The loader contect rep. is also known as the Loader API. It is a collection of utilities and stateful info about the current module being loaded"
+"1a. loader context"
+"Finally!! Loaders are ran!!"
+"2. This fin actually comes from a  supporting npm module: loader-runner."
+"loaders can specify deps of their own declaratively" 
+"like css => background img"
+"css-loader => url loader"
+"2a. loader runner"
+"3. can also return a buffer"
+"4. if supported loader sends back src maps."
+"5. remember last sketch? we send back to be parsed"
+
+### [Compilation.js](#Step23)
+"We've already covered this tl;dr caching"
+"finally back 2 levels up of callbacks"
+"?=unresolved"
+"oh hey no context switching <3"
+"timing & profile"
+"the next step in building the dep graph"
+"right now at this point we only have 1 module"
+
+
+### [Compilation.js](#Step24)
+"for now, lets consider this the entry module."
+"the final call from addEntry fn"
+"unflatten deps"
+"deps. can come from some 'resourece' aka file/resolved location, this dedupes the loc. and groups by [[dep1, dep2],...[block],...]"
+"hard to explain; 100% a module is a dep block dep block is hisgest super class that exists to rep. dep. relationships"
+"time to add all deps & bfs graph traversal"
+"OMG I JUST Figureed out DependenciesBlock fully just now!!!"
+"So the whole point is that deps can be uniq bit from the same place"
+
+### [Compilation.js](#Step25)
+"profiling"
+"since we've gone to a signle entry dep to now an arrau pf deps we'll need to iterate through them"
+"i can haz functional error handling?"
+"by calling create"
+"now we async iterate through all deps and process them w/ their dep factory"
+"warnings & error handlers"
+"Already learned this fun stuff"
+"tie deps back to origin modules (2 way ref.)"
+"profile pt1"
+"end of 1 way traversal"
+"cache checks"
+
+### [Compilation.js](#Step26)
+"some profiling + ?"
+"recursion begins"
+"remember we are still inside async factory iterator also."
+"recurse the graph!"
+"we can actually go back to original event"
+"finally traversal is complete"
+
+### [Compiler.js](#Step27)
+"Brain Recapitulation!!!!"
+"We just spent like 5 hours in Compilation, but the graph is done building and now we are back"
+"this is where we last left off"
+"finish & seal are next to be called..."
+
+### [Compilation.js](#Step28)
+"lets dive in to here"
+"warnings & errors"
+"triggered here yay!"
