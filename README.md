@@ -12,9 +12,14 @@ The whole goal is to teach you how to use webpack, therefore please ask question
 ## Disclaimer: This may not match master!
 I will likely not keep this up to date with every change in master on webpack/webpack. Rather, the purpose is to teach how to read and view the flow of the compilation lifecycle through webpack.
 
+##Text Transcripts
+To make this searchable, the text of each image has been transcribed into the "transcripts" section. The title of each transcript anchors to the respective image. 
+
 ### Help Wanted ❤😍💕❤😍💕❤😍💕❤😍💕❤😍
 
 ### Version (webpack 2.2.1+ from master)
+
+
 ![Step 1](https://github.com/TheLarkInn/artsy-webpack-tour/blob/master/images/webpack-narrative01.png)
 ![Step 2](https://github.com/TheLarkInn/artsy-webpack-tour/blob/master/images/webpack-narrative02.png)
 ![Step 3](https://github.com/TheLarkInn/artsy-webpack-tour/blob/master/images/webpack-narrative03.png)
@@ -43,3 +48,34 @@ I will likely not keep this up to date with every change in master on webpack/we
 ![Step 26](https://github.com/TheLarkInn/artsy-webpack-tour/blob/master/images/webpack-narrative-nmf11.png)
 ![Step 27](https://github.com/TheLarkInn/artsy-webpack-tour/blob/master/images/webpack-narrative-nmf12.png)
 ![Step 28](https://github.com/TheLarkInn/artsy-webpack-tour/blob/master/images/webpack-narrative-compilation-seal01.png)
+
+### Text Transcript
+
+#### <a name="Step 1">WebpackOptionsApply.js (List of plugins) </a>
+"All plugins for options cases"
+"These handle any module format"
+
+#### <a name="Step 2"> WebpackOptionsApply.js (Explanation of Options) </a>
+"getting opts from config"
+"options target code"
+"ES5 OOP (class W0A(?) extends 0A)"
+"records"
+"never used this before ¯\\_(ツ)_/¯ "
+"plugin system makes for extremely flexible feature development"
+
+#### <a name="Step 3">WebpackOptionsApply.js (Native modules) </a>
+"Certain targets ship w/ other modules native to their deploy target like Electron"
+"Similar to electron man but instead the "client" side. Thus diff externals"
+
+####<a name="Step 4">WebpackOptionsApply.js (Source Map Flavors)</a>
+"handling bad target values"
+"all of this logic is for the 'devtool' prop. Allows for about 15-20 flavors of source maps"
+"That was Sean's first ever PR!!!"
+
+####<a name="Step 5">WebpackOptionsApply.js (More module madness!)</a>
+"1. Single plugin for entry prop that is registered then"
+"2. Executes via subsequent event"
+"these plugins are grouped b/c they are all for module interop"
+"these plugins all pertain to general optimizations including tree shaking"
+"performance budgets code"
+"in version 1, you had to do this yourself, now in v2 we handle it"
