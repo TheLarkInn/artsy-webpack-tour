@@ -20,8 +20,8 @@ To make this searchable, the text of each image has been transcribed into the "t
 ### Version (webpack 2.2.1+ from master)
 
 
-<a name="Step1"></a>!
-[Step 1](https://github.com/TheLarkInn/artsy-webpack-tour/blob/master/images/webpack-narrative01.png)
+<a name="Step1"></a>
+![Step 1](https://github.com/TheLarkInn/artsy-webpack-tour/blob/master/images/webpack-narrative01.png)
 <a name="Step2">![Step 2](https://github.com/TheLarkInn/artsy-webpack-tour/blob/master/images/webpack-narrative02.png)</a>
 <a name="Step3">![Step 3](https://github.com/TheLarkInn/artsy-webpack-tour/blob/master/images/webpack-narrative03.png)</a>
 <a name="Step4">![Step 4](https://github.com/TheLarkInn/artsy-webpack-tour/blob/master/images/webpack-narrative04.png)</a>
@@ -52,11 +52,11 @@ To make this searchable, the text of each image has been transcribed into the "t
 
 ## Text Transcript
 
-### [WebpackOptionsApply.js (List of plugins)]("Step1") 
+### [WebpackOptionsApply.js (List of plugins)](#Step1) 
 "All plugins for options cases"
 "These handle any module format"
 
-### [WebpackOptionsApply.js (Explanation of Options)]("Step2") 
+### [WebpackOptionsApply.js (Explanation of Options)](#Step2) 
 "getting opts from config"
 "options target code"
 "ES5 OOP (class W0A(?) extends 0A)"
@@ -64,16 +64,16 @@ To make this searchable, the text of each image has been transcribed into the "t
 "never used this before ¯\\_(ツ)_/¯ "
 "plugin system makes for extremely flexible feature development"
 
-### [WebpackOptionsApply.js (Native modules)]("Step3")
+### [WebpackOptionsApply.js (Native modules)](#Step3)
 "Certain targets ship w/ other modules native to their deploy target like Electron"
 "Similar to electron man but instead the "client" side. Thus diff externals"
 
-### [WebpackOptionsApply.js (Source Map Flavors)]("Step4")
+### [WebpackOptionsApply.js (Source Map Flavors)](#Step4)
 "handling bad target values"
 "all of this logic is for the 'devtool' prop. Allows for about 15-20 flavors of source maps"
 "That was Sean's first ever PR!!!"
 
-### [WebpackOptionsApply.js (More module madness!)]("Step5")
+### [WebpackOptionsApply.js (More module madness!)](#Step5)
 "1. Single plugin for entry prop that is registered then"
 "2. Executes via subsequent event"
 "these plugins are grouped b/c they are all for module interop"
