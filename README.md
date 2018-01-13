@@ -12,6 +12,38 @@ The whole goal is to teach you how to use webpack, therefore please ask question
 ## Disclaimer: This may not match master!
 I will likely not keep this up to date with every change in master on webpack/webpack. Rather, the purpose is to teach how to read and view the flow of the compilation lifecycle through webpack.
 
+## Table of Contents
+
+1. [WebpackOptionsApply.js (List of plugins)](#Step1)
+2. [WebpackOptionsApply.js (Explanation of Options)](#Step2)
+3. [WebpackOptionsApply.js (Native modules)](#Step3)
+4. [WebpackOptionsApply.js (Source Map Flavors)](#Step4)
+5. [WebpackOptionsApply.js (More module madness!)](#Step5)
+6. [WebpackOptionsApply.js (after plugins)](#Step6)
+7. [Compiler.js (The Complier's Constructor)](#Step7)
+8. [Compiler.js (The Complier's Execution Process)](#Step8)
+9. [Compiler.js (The Complier's Execution Process Part 2)](#Step9)
+10. [Compiler.js (Compilation prelude)](#Step10)
+11. [Compilation.js (Welcome to the compilation)](#Step11)
+12. [Compilation.js (Welcome to the compilation)](#Step11)
+13. [Compilation.js](#Step13)
+14. [Compilation.js (Building chains)](#Step14)
+15. [NormalModuleFactory.js](#Step15)
+16. [NormalModuleFactory.js](#Step16)
+17. [NormalModuleFactory.js](#Step17)
+18. [NormalModule.js](#Step18)
+19. [Compilation.js (Back to compilation!)](#Step19)
+20. [Compilation.js](#Step20)
+21. [NormalModule.js](#Step21)
+22. [NormalModule.js](#Step22)
+23. [Compilation.js](#Step23)
+24. [Compilation.js](#Step24)
+25. [Compilation.js](#Step25)
+26. [Compilation.js](#Step26)
+27. [Compiler.js](#Step27)
+28. [Compilation.js](#Step28)
+
+
 ## Text Transcripts
 To make this searchable, the text of each image has been transcribed. The title of each transcript anchors to the respective image. The transcripts are not made to be read through, rather they provide a tool to search out a specific section based on the commentary.
 
